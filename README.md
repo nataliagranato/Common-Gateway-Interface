@@ -61,9 +61,11 @@ RewriteEngine on
 </VirtualHost>
 ```
 
+
+
 # Recarregar o Apache2
-```systemctl restart apache2
-```
+systemctl restart apache2
+
 
 # Criar os arquivos HTML e CGI
 nano /var/www/index.html
