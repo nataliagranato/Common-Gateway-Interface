@@ -2,16 +2,19 @@
 Implementação do servidor web Apache com módulo CGI. O CGI (Common Gateway Interface) é um serviço server-based o qual adiciona funcionalidade extra a uma página. Esta funcionalidade é fornecida por um 'pequeno' programa ou 'script' que é executado no servidor onde a página web fica. Estes programas podem ser feitos em diversas linguagens como Perl, PHP, C, Shell Script, etc.
 
 # Instalando o Apache2 e Python no Debian
-sudo su
+```sudo su
 apt install apache2 python3
+```
 
 # Adicionar o módulo CGI e rewrite às configurações do apache
-a2enmod cgi
+```a2enmod cgi
 a2enmod cgid
 a2enmod rewrite
+```
 
 # Configurar o cgi-bin no apache2
-nano /etc/apache2/conf-available/serve-cgi-bin.conf
+```nano /etc/apache2/conf-available/serve-cgi-bin.conf
+
 
 <IfModule mod_alias.c>
         <IfModule mod_cgi.c>
@@ -51,12 +54,14 @@ nano /etc/apache2/sites-enabled/000-default.conf
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 RewriteEngine on
 </VirtualHost>
+```
 
 # Recarregar o Apache2
-systemctl restart apache2
+```systemctl restart apache2
+```
 
 # Criar os arquivos HTML e CGI
-nano /var/www/index.html 
+```nano /var/www/index.html 
 <!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"></head>
@@ -71,8 +76,10 @@ nano /var/www/index.html
   </form>
  </body>
 </html>
- 
-nano /var/www/add.cgi 
+```
+
+```nano /var/www/add.cgi 
+```
 #!/usr/bin/env python3
 import cgi, cgitb cgitb.enable()
 input_data = cgi.FieldStorage()
@@ -86,10 +93,12 @@ except:
     print('<output>Desculpe, esse script funciona apenas números (integrais).</output>')
     raise SystemExit(1)
 print('<output>{0} + {1} = {2}</output>'.format(num1, num2, num1 + num2))
+```
 
 # Adicionar permissões de acesso
-chmod 777 /var/www/index.html
+```chmod 777 /var/www/index.html
 chmod 777 /var/www/add.cgi
+```
 
-Verificando a aplicação
+## Verificando a aplicação
 http://35.208.23.51/
