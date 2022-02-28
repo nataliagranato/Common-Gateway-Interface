@@ -108,9 +108,8 @@ print('<output>{0} + {1} = {2}</output>'.format(num1, num2, num1 + num2))
 ```
 
 # Adicionar permissões de acesso
-```chmod 777 /var/www/index.html
-chmod 777 /var/www/add.cgi
-```
+```chmod 777 /var/www/index.html```
+```chmod 777 /var/www/add.cgi```
 
 ## Verificando a aplicação
 http://35.208.23.51/
