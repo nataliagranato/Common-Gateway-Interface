@@ -13,6 +13,7 @@ a2enmod rewrite
 ```
 
 # Configurar o cgi-bin no apache2
+
 ```nano /etc/apache2/conf-available/serve-cgi-bin.conf
 ```
 
@@ -65,8 +66,8 @@ RewriteEngine on
 ```
 
 # Criar os arquivos HTML e CGI
-```nano /var/www/index.html
-```
+nano /var/www/index.html
+
 
 ```<!DOCTYPE html>
 <html>
@@ -84,8 +85,8 @@ RewriteEngine on
 </html>
 ```
 
-```nano /var/www/add.cgi 
-```
+nano /var/www/add.cgi 
+
 
 ```#!/usr/bin/env python3
 import cgi, cgitb cgitb.enable()
