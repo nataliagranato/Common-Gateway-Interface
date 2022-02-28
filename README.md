@@ -13,9 +13,9 @@ a2enmod rewrite
 ```
 
 # Configurar o cgi-bin no apache2
+nano /etc/apache2/conf-available/serve-cgi-bin.conf
 
-```nano /etc/apache2/conf-available/serve-cgi-bin.conf
-```
+
 
 
 ```<IfModule mod_alias.c>
@@ -36,9 +36,11 @@ a2enmod rewrite
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
 ```
 
+
 # Configuração do arquivo de host virtual padrão
-```nano /etc/apache2/sites-enabled/000-default.conf
-```
+nano /etc/apache2/sites-enabled/000-default.conf
+
+
 
 ```<VirtualHost *:80>
         ServerAdmin granatonatalia@gmail.com
