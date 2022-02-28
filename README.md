@@ -14,9 +14,10 @@ a2enmod rewrite
 
 # Configurar o cgi-bin no apache2
 ```nano /etc/apache2/conf-available/serve-cgi-bin.conf
+```
 
 
-<IfModule mod_alias.c>
+```<IfModule mod_alias.c>
         <IfModule mod_cgi.c>
                 Define ENABLE_USR_LIB_CGI_BIN
         </IfModule>
@@ -32,10 +33,13 @@ a2enmod rewrite
         </IfDefine>
 </IfModule>
 # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+```
 
 # Configuração do arquivo de host virtual padrão
-nano /etc/apache2/sites-enabled/000-default.conf
-<VirtualHost *:80>
+```nano /etc/apache2/sites-enabled/000-default.conf
+```
+
+```<VirtualHost *:80>
         ServerAdmin granatonatalia@gmail.com
         DocumentRoot /var/www/
         <Directory />
@@ -61,8 +65,10 @@ RewriteEngine on
 ```
 
 # Criar os arquivos HTML e CGI
-```nano /var/www/index.html 
-<!DOCTYPE html>
+```nano /var/www/index.html
+```
+
+```<!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"></head>
  <body>
@@ -80,7 +86,8 @@ RewriteEngine on
 
 ```nano /var/www/add.cgi 
 ```
-#!/usr/bin/env python3
+
+```#!/usr/bin/env python3
 import cgi, cgitb cgitb.enable()
 input_data = cgi.FieldStorage()
 print('Content-Type: text/html')
