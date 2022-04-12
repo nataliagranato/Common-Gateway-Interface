@@ -4,15 +4,8 @@ Implementação do servidor web Apache com módulo CGI. O CGI (Common Gateway In
 # Instalando o servidor Apache e habilitando o módulo chamado CGID.
 ```apt-get install apache2
 a2enmod cgid
-a2enmod rewrite
-```
+a2enmod rewrite```
 
 # Reinicie o serviço apache
 ```systemctl restart apache2
-```
-
-# Adicionar o módulo CGI e rewrite às configurações do apache
-```a2enmod cgi
-a2enmod cgid
-a2enmod rewrite
 ```
