@@ -9,13 +9,13 @@ a2enmod rewrite
 # Reinicie o serviço
 systemctl restart apache2
 
-# Certifique-se de que o módulo cgi esteja sendo carregado no arquivo "/etc/apache2/mods-available/cgi.load":
+# Certifique-se de que o módulo cgi esteja sendo carregado
 nano /etc/apache2/mods-available/cgi.load
 
-# Agora verifique-se que ele esteja habilitado no arquivo "/etc/apache2/mods-enabled/cgi.load":
+# Agora verifique-se que ele esteja habilitado 
 nano /etc/apache2/mods-enabled/cgi.load
 
-# Informando ao apache qual o formato a ser manipulado para cgi-script no arquivo "/etc/apache2/mods-enabled/mime.conf"
+# Informando ao apache qual o formato dos seus scripts
 nano /etc/apache2/mods-enabled/mime.conf
 
 # Criando o primeiro script cgi
