@@ -8,8 +8,8 @@ a2enmod rewrite
 ```
 
 # Reinicie o serviço apache
-'''systemctl restart apache2
-'''
+```systemctl restart apache2
+```
 
 # Adicionar o módulo CGI e rewrite às configurações do apache
 ```a2enmod cgi
