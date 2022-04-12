@@ -20,3 +20,10 @@ nano /etc/apache2/mods-enabled/mime.conf
 
 # Criando o primeiro script cgi
 cd /usr/lib/cgi-bin
+
+# Tornando-o executável
+chmod +x /usr/lib/cgi-bin/formularios.sh
+chmod +x /usr/lib/cgi-bin/resultados.sh
+
+# Acessando através do apache
+curl http://127.0.0.1/cgi-bin/formularios.sh
