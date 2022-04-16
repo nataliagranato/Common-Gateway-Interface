@@ -1,29 +1,37 @@
-# apache2-cgi
-Implementação do servidor web Apache com módulo CGI. O CGI (Common Gateway Interface) é um serviço server-based o qual adiciona funcionalidade extra a uma página. Esta funcionalidade é fornecida por um 'pequeno' programa ou 'script' que é executado no servidor onde a página web fica. Estes programas podem ser feitos em diversas linguagens como Perl, PHP, C, Shell Script, etc.
+# Common Gateway Interface
+CGI (sigla em inglês para Common Gateway Interface), em português, Interface Comum de Porta de entrada.
+Interface: elemento que proporciona uma ligação física ou lógica entre dois sistemas ou partes de um sistema que não poderiam ser conectados diretamente.
 
-# Instalando o servidor apache e habilitando o módulo chamado CGID.
-apt-get install apache2
+
+
+## Instalando o Apache2
+cd /usr/lib/cgi-bin apt install apache2
 a2enmod cgid
 a2enmod rewrite
 
-# Reinicie o serviço
+## Reiniciando o serviço
 systemctl restart apache2
 
-# Certifique-se de que o módulo cgi esteja sendo carregado
-nano /etc/apache2/mods-available/cgi.load
+## Certifique-se de que o módulo cgi esteja sendo carregado
+nano /etc/apache2/mods-available/cgi.load  
 
-# Agora verifique-se que ele esteja habilitado 
+## Agora verifique se o CGI está habilitado
 nano /etc/apache2/mods-enabled/cgi.load
 
-# Informando ao apache qual o formato dos seus scripts
+## Informando ao apache qual o formato dos seus scripts
 nano /etc/apache2/mods-enabled/mime.conf
 
-# Criando o primeiro script cgi
+![image](https://user-images.githubusercontent.com/91998391/163693503-84d5752b-53c3-4e66-a0f0-a8365991d274.png)
+
+Geralmente, o servidor HTTP tem um diretório (pasta), que é designado como uma coleção de documentos(arquivos), que podem ser enviados para navegadores da Web ligados a este servidor.
+CGI estende esse sistema, permitindo ao proprietário do servidor Web designar um diretório dentro da coleção de documento contendo scripts executáveis (ou arquivos binários) em vez de páginas pré-escritas, isto é conhecido como um diretório CGI.
 cd /usr/lib/cgi-bin
 
-# Tornando-o executável
-chmod +x /usr/lib/cgi-bin/formularios.sh
-chmod +x /usr/lib/cgi-bin/resultados.sh
 
-# Acessando através do apache
-curl http://127.0.0.1/cgi-bin/formularios.sh
+Estrutura geral de scripts CGI:
+•	Leitura e descodificação de dados (e/ou campos de informação de um pacote HTTP);
+•	Processamento dos dados (gravar informação em bases de dados, realizar cálculos, recuperar dados);
+•	Criação de uma página Web com os resultados produzidos.
+
+curl http://54.204.218.188/cgi-bin/formularios.sh
+curl http://54.204.218.188/cgi-bin/hwinfo.cgi
