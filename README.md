@@ -67,14 +67,6 @@ cliente;
 * Gerir contadores de acesso;
 * Processamento de mapas.
 
-Métodos de transmissão
-O protocolo HTTP, utiliza vários métodos de manipulação e organização dos dados. Os dois métodos mais utilizados para submeter dados de formulários são o GET e o POST. Ambos os métodos transferem dados do browser para o servidor, a maior diferença entre eles é a maneira como a informação é passada para o programa CGI:
-
-GET
-
-CGI chamada através do método GET
-
-O browser acrescenta um "?" ao URL especificado no atributo ACTION, e os valores codificados;
 
 ```
 curl http://54.204.218.188/cgi-bin/formularios.sh
