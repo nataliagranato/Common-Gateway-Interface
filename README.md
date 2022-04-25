@@ -69,6 +69,5 @@ cliente;
 
 
 ```
-curl http://54.204.218.188/cgi-bin/formularios.sh
-curl http://54.204.218.188/cgi-bin/hwinfo.cgi
+http://54.174.113.206/cgi-bin/index.sh
 ```
